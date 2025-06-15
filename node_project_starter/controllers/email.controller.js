@@ -80,7 +80,6 @@ export const removeEmailFromBlacklist = async (req, res) => {
     blacklist = blacklist.filter(item => item !== email); // Filter by 'email' from body
 
     if (blacklist.length === initialLength) {
-      // If the length didn't change, the email wasn't found in the list
       return res.status(404).json({ success: false, message: 'Email not found in blacklist.' });
     }
 
