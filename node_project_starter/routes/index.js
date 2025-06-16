@@ -1,7 +1,6 @@
 // routes/index.js
 import express from 'express';
-import emailRoutes from './email.routes.js'; // <--- Ensure .js is here
-
+import emailRoutes from './email.routes.js';
 const router = express.Router();
 
 router.use('/', emailRoutes);

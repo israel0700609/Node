@@ -1,15 +1,12 @@
+// services/externalApi.js
 import dotenv from 'dotenv';
 dotenv.config();
 
 const ABSTRACT_API_KEY = process.env.ABSTRACT_API_KEY;
 
-if (!ABSTRACT_API_KEY) {
-  console.warn("WARNING: ABSTRACT_API_KEY is not set in your .env file. API calls to AbstractAPI will fail.");
-}
-
 export const validateEmail = async (emailAddress) => {
   if (!ABSTRACT_API_KEY) {
-    throw new Error('AbstractAPI key is missing. Please set ABSTRACT_API_KEY in your .env file.');
+    throw new Error('AbstractAPI key is missing.');
   }
   const url = `https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${emailAddress}`;
 
@@ -26,5 +23,3 @@ export const validateEmail = async (emailAddress) => {
     throw error;
   }
 };
-
-// validatePhone function removed as per new requirement
