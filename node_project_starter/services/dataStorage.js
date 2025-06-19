@@ -5,13 +5,13 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.join(__dirname, '..', 'data'); // הנתיב לתיקיית 'data'
+const DATA_DIR = path.join(__dirname, '..', 'data'); 
 
 const ensureDataDir = async () => {
   try {
     await fs.mkdir(DATA_DIR, { recursive: true });
   } catch (error) {
-    // תיקון: error.code !== 'EEXIST'
+    
     if (error.code !== 'EEXIST') {
       console.error('Error creating data directory:', error);
       throw error;
@@ -28,7 +28,7 @@ export const getData = async (filename) => {
   } catch (error) {
     if (error.code === 'ENOENT') {
       console.log(`Data file ${filename} not found.`);
-      return null; // החזר null אם הקובץ לא נמצא
+      return null; 
     }
     console.error(`Error reading data from ${filename}:`, error);
     throw error;

@@ -25,9 +25,9 @@ export const removeFromWhitelist = async (email) => {
   if (whitelist.length < initialLength) {
     await addData(WHITELIST_FILE, whitelist);
     console.log(`Email '${email}' removed from whitelist.`);
-    return true; // אינדיקציה שהוסר בהצלחה
+    return true; 
   } else {
     console.log(`Email '${email}' not found in whitelist.`);
-    return false; // אינדיקציה שלא נמצא
+    return false; 
   }
 };
