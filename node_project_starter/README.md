@@ -136,4 +136,5 @@ If the current API key fails or quota is exceeded, please contact us to get a ne
 
 ## 📬 Contact
 email: israel070609@gmail.com
+email: gavriel.fernandez@icloud.com
 Feel free to reach out to us for any issues regarding the API or the project.
