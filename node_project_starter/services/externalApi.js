@@ -1,8 +1,8 @@
 // services/externalApi.js
-import dotenv from 'dotenv';
-dotenv.config();
+import config from '../config/config.js'
 
-const ABSTRACT_API_KEY = process.env.ABSTRACT_API_KEY;
+
+const ABSTRACT_API_KEY = config.api;
 
 export const validateEmail = async (emailAddress) => {
   if (!ABSTRACT_API_KEY) {
